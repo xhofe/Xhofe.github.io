@@ -1,0 +1,188 @@
+:root {
+  --background-color: #fff;
+  --second-background-color: #f7f7f7;
+  --primary-color: #06c;
+  --first-text-color: #484853;
+  --second-text-color: #4c4c57;
+  --third-text-color: #808091;
+  --fourth-text-color: #ededef;
+  --default-text-color: #50505c;
+  --border-color: #b3b3b3;
+  --selection-color: #0075eb;
+  --shadow-color: rgba(0,0,0,0.2);
+  --shadow-hover-color: rgba(0,0,0,0.28);
+  --scrollbar-color: #595967;
+  --scroll-bar-bg-color: #e6e6e6;
+  --link-color: #484853;
+  --copyright-info-color: #c03;
+  --avatar-background-color: #06c;
+  --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff;
+    --second-background-color: #f7f7f7;
+    --primary-color: #06c;
+    --first-text-color: #484853;
+    --second-text-color: #4c4c57;
+    --third-text-color: #808091;
+    --fourth-text-color: #ededef;
+    --default-text-color: #50505c;
+    --border-color: #b3b3b3;
+    --selection-color: #0075eb;
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover-color: rgba(0,0,0,0.28);
+    --scrollbar-color: #595967;
+    --scroll-bar-bg-color: #e6e6e6;
+    --link-color: #484853;
+    --copyright-info-color: #c03;
+    --avatar-background-color: #06c;
+    --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #383940;
+    --second-background-color: #32333a;
+    --primary-color: #06c;
+    --first-text-color: #d2d2d7;
+    --second-text-color: #cbcbd1;
+    --third-text-color: #9595a2;
+    --fourth-text-color: #242429;
+    --default-text-color: #bebec6;
+    --border-color: #5c5e6a;
+    --selection-color: #0075eb;
+    --shadow-color: rgba(128,128,128,0.2);
+    --shadow-hover-color: rgba(128,128,128,0.28);
+    --scrollbar-color: #32333a;
+    --scroll-bar-bg-color: #5c5e6a;
+    --link-color: #c5c5cc;
+    --copyright-info-color: #a30029;
+    --avatar-background-color: #005cb8;
+    --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
+  }
+}
+.light-mode {
+  --background-color: #fff;
+  --second-background-color: #f7f7f7;
+  --primary-color: #06c;
+  --first-text-color: #484853;
+  --second-text-color: #4c4c57;
+  --third-text-color: #808091;
+  --fourth-text-color: #ededef;
+  --default-text-color: #50505c;
+  --border-color: #b3b3b3;
+  --selection-color: #0075eb;
+  --shadow-color: rgba(0,0,0,0.2);
+  --shadow-hover-color: rgba(0,0,0,0.28);
+  --scrollbar-color: #595967;
+  --scroll-bar-bg-color: #e6e6e6;
+  --link-color: #484853;
+  --copyright-info-color: #c03;
+  --avatar-background-color: #06c;
+  --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
+}
+.dark-mode {
+  --background-color: #383940;
+  --second-background-color: #32333a;
+  --primary-color: #06c;
+  --first-text-color: #d2d2d7;
+  --second-text-color: #cbcbd1;
+  --third-text-color: #9595a2;
+  --fourth-text-color: #242429;
+  --default-text-color: #bebec6;
+  --border-color: #5c5e6a;
+  --selection-color: #0075eb;
+  --shadow-color: rgba(128,128,128,0.2);
+  --shadow-hover-color: rgba(128,128,128,0.28);
+  --scrollbar-color: #32333a;
+  --scroll-bar-bg-color: #5c5e6a;
+  --link-color: #c5c5cc;
+  --copyright-info-color: #a30029;
+  --avatar-background-color: #005cb8;
+  --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
+}
+:root {
+  --code-foreground: #535360;
+  --code-background: #f2f2f2;
+  --highlight-background: #fafafa;
+  --highlight-foreground: #535360;
+  --highlight-comment: #8e908c;
+  --highlight-red: #c82829;
+  --highlight-orange: #f5871f;
+  --highlight-yellow: #eab700;
+  --highlight-green: #718c00;
+  --highlight-aqua: #3e999f;
+  --highlight-blue: #4271ae;
+  --highlight-purple: #8959a8;
+  --highlight-gutter-color: #585865;
+  --highlight-gutter-bg-color: #f2f2f2;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --code-foreground: #535360;
+    --code-background: #f2f2f2;
+    --highlight-background: #fafafa;
+    --highlight-foreground: #535360;
+    --highlight-comment: #8e908c;
+    --highlight-red: #c82829;
+    --highlight-orange: #f5871f;
+    --highlight-yellow: #eab700;
+    --highlight-green: #718c00;
+    --highlight-aqua: #3e999f;
+    --highlight-blue: #4271ae;
+    --highlight-purple: #8959a8;
+    --highlight-gutter-color: #585865;
+    --highlight-gutter-bg-color: #f2f2f2;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --code-foreground: #bfbfc7;
+    --code-background: #32333a;
+    --highlight-background: #34343b;
+    --highlight-foreground: #bfbfc7;
+    --highlight-comment: #969896;
+    --highlight-red: #c66;
+    --highlight-orange: #de935f;
+    --highlight-yellow: #f0c674;
+    --highlight-green: #b5bd68;
+    --highlight-aqua: #8abeb7;
+    --highlight-blue: #81a2be;
+    --highlight-purple: #b294bb;
+    --highlight-gutter-color: #c1c1c9;
+    --highlight-gutter-bg-color: #32333a;
+  }
+}
+.light-mode {
+  --code-foreground: #535360;
+  --code-background: #f2f2f2;
+  --highlight-background: #fafafa;
+  --highlight-foreground: #535360;
+  --highlight-comment: #8e908c;
+  --highlight-red: #c82829;
+  --highlight-orange: #f5871f;
+  --highlight-yellow: #eab700;
+  --highlight-green: #718c00;
+  --highlight-aqua: #3e999f;
+  --highlight-blue: #4271ae;
+  --highlight-purple: #8959a8;
+  --highlight-gutter-color: #585865;
+  --highlight-gutter-bg-color: #f2f2f2;
+}
+.dark-mode {
+  --code-foreground: #bfbfc7;
+  --code-background: #32333a;
+  --highlight-background: #34343b;
+  --highlight-foreground: #bfbfc7;
+  --highlight-comment: #969896;
+  --highlight-red: #c66;
+  --highlight-orange: #de935f;
+  --highlight-yellow: #f0c674;
+  --highlight-green: #b5bd68;
+  --highlight-aqua: #8abeb7;
+  --highlight-blue: #81a2be;
+  --highlight-purple: #b294bb;
+  --highlight-gutter-color: #c1c1c9;
+  --highlight-gutter-bg-color: #32333a;
+}

@@ -1,0 +1,149 @@
+.markdown-body {
+  font-size: 1rem;
+}
+.markdown-body blockquote {
+  box-sizing: border-box;
+  border-left: 5px solid var(--default-text-color);
+  margin: 20px 0;
+  color: var(--default-text-color);
+  background: var(--second-background-color);
+}
+.markdown-body blockquote p,
+.markdown-body blockquote ul,
+.markdown-body blockquote ol {
+  padding: 5px 5px 5px 10px;
+}
+.markdown-body p {
+  line-height: 2;
+  color: var(--default-text-color);
+}
+.markdown-body a {
+  position: relative;
+  outline: 0;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  border-bottom: 1px solid var(--third-text-color);
+  box-sizing: border-box;
+  padding-bottom: 2px;
+}
+.markdown-body a .fas,
+.markdown-body a .far,
+.markdown-body a fab {
+  margin: 0 2px 0 6px;
+  position: relative;
+  color: var(--third-text-color);
+  font-size: 0.88rem;
+}
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+.markdown-body a:hover::after {
+  background: var(--primary-color);
+}
+.markdown-body strong {
+  color: var(--default-text-color);
+}
+.markdown-body em {
+  color: var(--default-text-color);
+}
+.markdown-body ul > li,
+.markdown-body ol > li {
+  margin-left: 16px;
+  line-height: 2rem;
+}
+.markdown-body ul li {
+  list-style: disc;
+}
+.markdown-body ul li ul li {
+  list-style: circle;
+}
+.markdown-body ul li ul li ul li {
+  list-style: square;
+}
+.markdown-body ol li {
+  list-style: decimal;
+}
+.markdown-body ol li ol li {
+  list-style: upper-alpha;
+}
+.markdown-body ol li ol li ol li {
+  list-style: upper-roman;
+}
+.markdown-body li {
+  color: var(--default-text-color);
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--second-text-color);
+  line-height: 1.5;
+keep-tablet()
+}
+.markdown-body h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+keep-tablet()
+}
+.markdown-body h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+keep-tablet()
+}
+.markdown-body h3 {
+  font-size: 1.6rem;
+  font-weight: 550;
+keep-tablet()
+}
+.markdown-body h4 {
+  font-size: 1.5rem;
+  font-weight: 550;
+keep-tablet()
+}
+.markdown-body h5 {
+  font-size: 1.28rem;
+  font-weight: 500;
+keep-tablet()
+}
+.markdown-body h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+keep-tablet()
+}
+.markdown-body img {
+  box-sizing: border-box;
+  max-width: 100%;
+  cursor: zoom-in;
+  display: block;
+  box-shadow: 0 0 2px var(--shadow-color);
+  margin: 10px 0 2px;
+}
+.markdown-body > table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: auto;
+}
+.markdown-body > table td,
+.markdown-body > table th {
+  padding: 0;
+}
+.markdown-body > table th {
+  font-weight: 600;
+}
+.markdown-body > table td,
+.markdown-body > table th {
+  padding: 6px 13px;
+  border: 1px solid var(--border-color);
+}
+.markdown-body > table tr {
+  background-color: var(--background-color);
+  border: 1px solid var(--fourth-text-color);
+}
+.markdown-body > table tr:nth-child(2n) {
+  background-color: var(--second-background-color);
+}

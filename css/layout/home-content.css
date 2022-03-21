@@ -1,0 +1,64 @@
+.home-content-container {
+  background: var(--background-color);
+}
+.home-content-container .home-article-list .home-article-item {
+  position: relative;
+}
+.home-content-container .home-article-list .home-article-item .top-icon {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.2rem;
+  transform: rotate(45deg);
+  color: var(--third-text-color);
+keep-tablet()
+}
+.home-content-container .home-article-list .home-article-item .home-article-title {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--second-text-color);
+keep-tablet()
+keep-mobile()
+  margin: 0;
+}
+.home-content-container .home-article-list .home-article-item .home-article-content {
+  word-wrap: break-word;
+  text-align: justify;
+  margin: 20px 0;
+  color: var(--default-text-color);
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--third-text-color);
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info {
+  letter-spacing: 0.5px;
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info span {
+  margin-right: 10px;
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info span:last-child {
+  margin-right: 0;
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info span ul,
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info span li {
+  display: inline;
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container hr {
+  border: none;
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0 10px;
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container a {
+  color: var(--third-text-color);
+}
+.home-content-container .home-article-list .home-article-item .home-article-meta-info-container a:hover {
+  color: var(--primary-color);
+}

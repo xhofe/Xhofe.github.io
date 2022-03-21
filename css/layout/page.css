@@ -1,0 +1,90 @@
+.page-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background: var(--background-color);
+keep-tablet()
+}
+.page-container .page-main-content {
+  padding-top: $header-height;
+  position: relative;
+keep-tablet()
+keep-mobile()
+}
+.header-shrink .page-container .page-main-content {
+  padding-top: $header-shrink-height;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: $header-height;
+  z-index: $z-index-5;
+  box-sizing: border-box;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-top.hide {
+  transform: translateY(-105%);
+}
+.header-shrink .page-container .page-main-content .page-main-content-top {
+  height: $header-shrink-height;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-middle {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: $component-spacing-value 0;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-middle .main-content {
+  position: relative;
+  box-sizing: border-box;
+  width: $main-content-width;
+  max-width: $content-max-width;
+  height: 100%;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-bottom {
+  width: 100%;
+}
+.page-container .page-aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  z-index: $z-index-6;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--background-color);
+keep-tablet()
+}
+.page-container .post-tools {
+  position: fixed;
+  top: $header-height$component-spacing-value;
+  right: $component-spacing-value;
+keep-tablet()
+keep-mobile()
+}
+.header-shrink .page-container .post-tools {
+  top: $header-shrink-height$component-spacing-value;
+keep-tablet()
+keep-mobile()
+}
+.page-container .right-bottom-side-tools {
+  position: fixed;
+  bottom: 5%;
+  right: 0;
+}

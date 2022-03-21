@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Xhofe">
+    <link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+    
+    <title>
+        
+            阿里云盘列表AList部署教程(V1) |
+        
+        Xhofe&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"nn.ci","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep coding and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Xhofe' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Xhofe&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives/"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories/"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags/"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links/"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives/">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories/">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags/">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links/">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">阿里云盘列表AList部署教程(V1)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Xhofe</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-03-13 14:08:00</span>
+        <span class="mobile">2021-03-13 14:08</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/tutorials/">tutorials</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/go/">go</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/vue/">vue</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/gin/">gin</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/alist/">alist</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/github/">github</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h1>
+<blockquote>
+<p><strong>此版本不再维护，请使用新版：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist" >https://github.com/Xhofe/alist<i class="fas fa-external-link-alt"></i></a></strong><br />
+AList是一款阿里云盘的目录文件列表程序，后端基于<code>golang</code>最好的<code>http</code>框架<code>gin</code>，前端使用<code>vue</code>和<code>ant design</code>。没有专门学过前端，大佬轻喷?</p>
+</blockquote>
+<blockquote>
+<p>更新计划：<a class="link"   target="_blank" rel="noopener" href="https://www.notion.so/AList-993f3a1a43fc464588f018b46369672e%EF%BC%8C%E6%9C%89%E5%A5%BD%E7%9A%84%E5%BB%BA%E8%AE%AE%E5%8F%AF%E4%BB%A5%E8%AF%84%E8%AE%BA%E6%88%96%E5%9C%A8issue%E4%B8%AD%E5%91%8A%E8%AF%89%E6%88%91%E3%80%82" >https://www.notion.so/AList-993f3a1a43fc464588f018b46369672e，有好的建议可以评论或在issue中告诉我。<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>本程序仅供学习研究使用！！！发现任何bug请提issue，部署上遇到问题欢迎加群交流。<br />
+更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！<br />
+更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！<br />
+更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！</p>
+<h1 id="项目地址"><a class="markdownIt-Anchor" href="#项目地址"></a> 项目地址：</h1>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist" >https://github.com/Xhofe/alist<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist-web" >https://github.com/Xhofe/alist-web<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h1 id="快捷部署by-大白一号"><a class="markdownIt-Anchor" href="#快捷部署by-大白一号"></a> 快捷部署（by <a class="link"   target="_blank" rel="noopener" href="https://www.cooluc.com/" >大白一号<i class="fas fa-external-link-alt"></i></a>）</h1>
+<ul>
+<li>脚本安装：<code>bash -c &quot;$(curl -sS https://www.cooluc.com/alist-install.sh)&quot;</code></li>
+<li>refresh_token获取：<a class="link"   target="_blank" rel="noopener" href="https://media.cooluc.com/decode_token/" >https://media.cooluc.com/decode_token/<i class="fas fa-external-link-alt"></i></a></li>
+<li>Heroku部署： <a class="link"   target="_blank" rel="noopener" href="https://github.com/sbwml/alist-heroku" >https://github.com/sbwml/alist-heroku<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h1 id="更新"><a class="markdownIt-Anchor" href="#更新"></a> 更新</h1>
+<h2 id="202151"><a class="markdownIt-Anchor" href="#202151"></a> 2021.5.1</h2>
+<ul>
+<li>在线预览视频时间延长到4小时 (<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist/pull/96" >#96<i class="fas fa-external-link-alt"></i></a>)</li>
+<li>指定路径与深度rebuild</li>
+<li>优化请求：分次请求</li>
+<li>增加右键菜单</li>
+<li>支持多选、导出直链/秒传（需要rebuild，借助https://bbs.tampermonkey.net.cn/thread-427-1-1.html）</li>
+<li>直链编码</li>
+</ul>
+<h2 id="2021331"><a class="markdownIt-Anchor" href="#2021331"></a> 2021.3.31</h2>
+<ul>
+<li>优化路径栏</li>
+<li>修复了因为Referer导致不能下载的问题（<a class="link"   target="_blank" rel="noopener" href="https://github.com/122cygf" >122cygf<i class="fas fa-external-link-alt"></i></a>）</li>
+<li>增加了视频转码选项</li>
+<li>图片缩略图预览</li>
+<li>修复了json文件无法预览的bug</li>
+</ul>
+<h2 id="2021317"><a class="markdownIt-Anchor" href="#2021317"></a> 2021.3.17</h2>
+<p>本次更新需要修改配置文件，更新之后/首次运行都需要手动rebuild一下。</p>
+<ul>
+<li>支持多盘</li>
+<li>直链url密码哈希</li>
+<li>修复不需要密码的文件复制直链也会携带密码的bug</li>
+<li>数据库支持mysql</li>
+<li>修复从文件返回目录Readme不更新的bug</li>
+<li>重建目录时遮罩，优化体验</li>
+<li>支持flv视频（部分浏览器可能不支持，详见https://github.com/Bilibili/flv.js/）</li>
+</ul>
+<h2 id="2021313"><a class="markdownIt-Anchor" href="#2021313"></a> 2021.3.13</h2>
+<ul>
+<li>
+<p>后端引入sqlite3，列表部分不再依赖api，提高响应速度</p>
+</li>
+<li>
+<p>支持搜索功能</p>
+</li>
+<li>
+<p>前端使用vue3+ts重构</p>
+</li>
+<li>
+<p>url支持按照目录结果展示</p>
+</li>
+<li>
+<p>音乐播放支持列表</p>
+</li>
+<li>
+<p>支持隐藏文件夹</p>
+</li>
+<li>
+<p>更好的密码支持</p>
+</li>
+<li>
+<p>更早的更新：<a class="link"   target="_blank" rel="noopener" href="https://www.nn.ci/archives/alist-v0.html" >https://www.nn.ci/archives/alist-v0.html<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
+<h1 id="预览"><a class="markdownIt-Anchor" href="#预览"></a> 预览</h1>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://alist.nn.ci" >https://alist.nn.ci<i class="fas fa-external-link-alt"></i></a> (稳定版本,即Github Release的最新版本)</li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://alist.now.sh" >https://alist.now.sh<i class="fas fa-external-link-alt"></i></a> (开发版本,随着GitHub提交更新)</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="alist-v1/d81d2dab3e5f0.png"
+                      alt="alist预览" 
+                ></p>
+<h1 id="如何部署"><a class="markdownIt-Anchor" href="#如何部署"></a> 如何部署</h1>
+<p>首先第一步，Star本项目<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist" >AList<i class="fas fa-external-link-alt"></i></a>(bushi</p>
+<h2 id="获取refresh_token"><a class="markdownIt-Anchor" href="#获取refresh_token"></a> 获取<code>refresh_token</code></h2>
+<p>web端token加入了referrer限制，请参考这个<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist/issues/88" >issue<i class="fas fa-external-link-alt"></i></a>通过手机端抓包/查找日志（<code>/data/media/0/Android/data/com.alicloud.databox/files/logs/trace/</code>）来获取refresh_token，或使用https://media.cooluc.com/decode_token/。<br />
+<s>为什么不直接使用<code>access_token</code>，因为有效期只有两小时。经<a class="link"   target="_blank" rel="noopener" href="https://www.hostloc.com/space-uid-22146.html" >Syc<i class="fas fa-external-link-alt"></i></a>大佬的提醒，获取<code>refresh_token</code>其实没这么麻烦，我们只需要登陆阿里云盘之后，打开开发者工具，切换到<code>Application</code>选项卡，点开<code>Local storage</code>,会有一个<code>token</code>项，点开就可以看到<code>refresh_token</code>了，此处感谢一下<a class="link"   target="_blank" rel="noopener" href="https://www.hostloc.com/space-uid-22146.html" >Syc<i class="fas fa-external-link-alt"></i></a>大佬。</s></p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<h3 id="使用gin作为静态资源服务器"><a class="markdownIt-Anchor" href="#使用gin作为静态资源服务器"></a> 使用gin作为静态资源服务器</h3>
+<ul>
+<li>前往<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist/releases" >AList Release<i class="fas fa-external-link-alt"></i></a>下载对应系统的程序，解压得到一个示例配置文件和一个系统名称文件夹里面包含运行文件<code>alist</code></li>
+<li>前往<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist-web/releases" >AList-web<i class="fas fa-external-link-alt"></i></a>下载打包好的前端，解压得到一个dist目录放到<code>alist</code>同级目录下</li>
+<li>在同级目录下新建一个配置文件<code>conf.yml</code>，复制以下内容到该文件中，或直接使用示例配置文件进行修改</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">info:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">AList</span> <span class="comment">#标题</span></span><br><span class="line">  <span class="attr">logo:</span> <span class="string">&quot;&quot;</span> <span class="comment">#网站logo 如果填写,则会替换掉默认的</span></span><br><span class="line">  <span class="attr">footer_text:</span> <span class="string">Xhofe&#x27;s</span> <span class="string">Blog</span> <span class="comment">#网页底部文字</span></span><br><span class="line">  <span class="attr">footer_url:</span> <span class="string">https://www.nn.ci</span> <span class="comment">#网页底部文字链接</span></span><br><span class="line">  <span class="attr">music_img:</span> <span class="string">https://img.xhofe.top/2020/12/19/0f8b57866bdb5.gif</span> <span class="comment">#预览音乐文件时的图片</span></span><br><span class="line">  <span class="attr">check_update:</span> <span class="literal">true</span> <span class="comment">#前端是否显示更新</span></span><br><span class="line">  <span class="attr">script:</span> <span class="comment">#自定义脚本,可以是脚本的链接，也可以直接是脚本内容</span></span><br><span class="line">  <span class="attr">autoplay:</span> <span class="literal">true</span> <span class="comment">#视频是否自动播放</span></span><br><span class="line">  <span class="attr">preview:</span></span><br><span class="line">    <span class="attr">text:</span> [<span class="string">txt</span>,<span class="string">htm</span>,<span class="string">html</span>,<span class="string">xml</span>,<span class="string">java</span>,<span class="string">properties</span>,<span class="string">sql</span>,<span class="string">js</span>,<span class="string">md</span>,<span class="string">json</span>,<span class="string">conf</span>,<span class="string">ini</span>,<span class="string">vue</span>,<span class="string">php</span>,<span class="string">py</span>,<span class="string">bat</span>,<span class="string">gitignore</span>,<span class="string">yml</span>,<span class="string">go</span>,<span class="string">sh</span>,<span class="string">c</span>,<span class="string">cpp</span>,<span class="string">h</span>,<span class="string">hpp</span>] <span class="comment">#要预览的文本文件的后缀，可以自行添加</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">address:</span> <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line">  <span class="attr">port:</span> <span class="string">&quot;5244&quot;</span></span><br><span class="line">  <span class="attr">search:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">download:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">static:</span> <span class="string">dist</span></span><br><span class="line">  <span class="attr">site_url:</span> <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">password</span> <span class="comment">#用于重建目录</span></span><br><span class="line"><span class="attr">ali_drive:</span></span><br><span class="line">  <span class="attr">api_url:</span> <span class="string">https://api.aliyundrive.com/v2</span></span><br><span class="line">  <span class="attr">max_files_count:</span> <span class="number">3000</span></span><br><span class="line">  <span class="attr">drives:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">refresh_token:</span> <span class="string">xxx</span> <span class="comment">#refresh_token</span></span><br><span class="line">    <span class="attr">root_folder:</span> <span class="string">root</span> <span class="comment">#根目录的file_id</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">drive0</span> <span class="comment">#盘名，多个盘不可重复，这里只是示例，不是一定要叫这个名字，可随意修改</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">pass</span> <span class="comment">#该盘密码，空（&#x27;&#x27;）则不设密码，修改需要重建生效</span></span><br><span class="line">    <span class="attr">hide:</span> <span class="literal">false</span> <span class="comment">#是否在主页隐藏该盘，不可全部隐藏，至少暴露一个</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">refresh_token:</span> <span class="string">xxx</span> <span class="comment">#只有一个盘的话，该段完全可以删除，反之有更多可以继续添加</span></span><br><span class="line">    <span class="attr">root_folder:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">drive1</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">pass</span></span><br><span class="line">    <span class="attr">hide:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">database:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">sqlite3</span></span><br><span class="line">  <span class="attr">dBFile:</span> <span class="string">alist.db</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>填入最开始获取到的<code>refresh_token</code>，然后自行修改配置文件中默认的值</li>
+<li>现在的情况应该是，目录下有两个文件<code>alist</code>、<code>conf.yml</code>和一个文件夹<code>dist</code>:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── alist</span><br><span class="line">├── conf.yml</span><br><span class="line">└── dist</span><br><span class="line">    ├── favicon.ico</span><br><span class="line">    ├── index.html</span><br><span class="line">    └── static</span><br><span class="line">        ├── css</span><br><span class="line">        │   ├── about.f0b54b1c.css</span><br><span class="line">        │   ├── app.4f0c3e9a.css</span><br><span class="line">        │   └── chunk-vendors.8f913079.css</span><br><span class="line">        ├── img</span><br><span class="line">        │   └── alist.bcb68ba0.png</span><br><span class="line">        └── js</span><br><span class="line">            ├── about.8108f65b.js</span><br><span class="line">            ├── app.34cb39e5.js</span><br><span class="line">            └── chunk-vendors.131f0f41.js</span><br><span class="line"></span><br><span class="line">5 directories, 12 files</span><br></pre></td></tr></table></figure>
+<p>在该文件夹下面执行下面的命令（Linux）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x alist</span><br><span class="line"><span class="built_in">nohup</span> ./alist &gt; log.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<p>ok，程序已经跑起来了。你可以<code>cat log.log</code>看看有没有报错。或者访问http://ip:5244进行查看。</p>
+<h4 id="守护进程可选"><a class="markdownIt-Anchor" href="#守护进程可选"></a> 守护进程（可选）</h4>
+<p><code>vim /usr/lib/systemd/system/alist.service</code>添加以下内容，其中path_alist为alist所在的路径</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=alist</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">WorkingDirectory</span>=path_alist</span><br><span class="line"><span class="attr">ExecStart</span>=path_alist/alist -conf conf.yml</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>然后<code>systemctl daemon-reload</code>重载配置，现在你就可以使用这些命令来管理程序了：</p>
+<ul>
+<li>启动: <code>systemctl start alist</code></li>
+<li>关闭: <code>systemctl stop alist</code></li>
+<li>自启: <code>systemctl enable alist</code></li>
+<li>状态: <code>systemctl status alist</code></li>
+</ul>
+<h4 id="使用mysql可选"><a class="markdownIt-Anchor" href="#使用mysql可选"></a> 使用mysql（可选）</h4>
+<p>需要使用utf8mb4编码，修改database部分配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">database:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">mysql</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">用户名</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">密码</span></span><br><span class="line">  <span class="attr">host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">3306</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">数据库名</span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义静态资源服务器"><a class="markdownIt-Anchor" href="#自定义静态资源服务器"></a> 自定义静态资源服务器</h3>
+<p>与使用gin作为静态资源服务器操作步骤差不多，不同的地方在于：</p>
+<ul>
+<li>下载<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist-web" >AList-web<i class="fas fa-external-link-alt"></i></a>的源码，修改<code>.env.production</code>中的<code>VUE_APP_API_URL</code>为具体部署的后端地址，然后<code>yarn &amp;&amp; yarn build</code>自行部署</li>
+<li><code>conf.yml</code>中的<code>server.site_url</code>填写前端部署的域名或者默认为’*’，需要正确填写，否则会报错。</li>
+<li>建议直接使用gin作为静态资源服务器，使用nginx的话因为路由使用了history模式（没有#号好看一点），所以还需要设置一下nginx：</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">  <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/history-mode.html" >https://router.vuejs.org/zh/guide/essentials/history-mode.html<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="反向代理"><a class="markdownIt-Anchor" href="#反向代理"></a> 反向代理</h3>
+<p>程序默认监听5244端口，要实现https访问，需要使用nginx反向代理，在配置文件中加入</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    <span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://127.0.0.1:5244;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="常见问题解答"><a class="markdownIt-Anchor" href="#常见问题解答"></a> 常见问题解答</h1>
+<ul>
+<li>如何给文件夹设置密码？<br />
+在要加密的目录名称后面加上<code>.password-密码</code>，列表中会自动消除后面的密码部分。</li>
+<li>如何隐藏文件夹<br />
+在要隐藏的文件夹名称后面加上<code>.hide</code>即可。</li>
+<li>如何重建目录树<br />
+点击网页底部的rebuild按钮，输入配置文件中设置的server.password确定即可。</li>
+<li>如何设置根目录？<br />
+修改配置文件中的<code>ali_drive.root_folder</code> 为想要设置的文件夹的<code>file_id</code>即可。文件夹的file_id是什么？根目录就是root，其他目录为点进文件夹之后的url中<code>folder/</code>后面那一串</li>
+<li>如何自定义网页底部链接？<br />
+修改配置文件中的<code>footer_text</code>和<code>footer_url</code>为要设置的内容，或者不填则不会显示。</li>
+<li>怎么复制文件直链？<br />
+点进文件，右上角有复制直链的按钮。</li>
+<li>修改网站icon？<br />
+替换掉<code>dist</code>目录下的<code>favicon.ico</code>即可。</li>
+<li>为什么新上传的文件不显示/删除了的文件还在？<br />
+列表展示的是本地数据库里的数据，更新文件之后需要重建。</li>
+<li>如何更新？<br />
+前端：下载新的打包好的文件，删掉原来的dist文件夹，解压新的dist放入原来的位置即可。后端：<code>pkill alist</code> 停掉老的进程，删除旧的<code>alist</code>，下载新的alist，查看配置文件，补上新的配置项，再次运行即可。</li>
+<li>运行显示检查更新之后直接报错？<br />
+可能是无法访问到GitHub的api，可以在命令行后面加上<code>-skip-update</code>跳过检查更新。</li>
+<li>怎么指定路径重建？<br />
+在哪个路径点rebuild就是在哪里重建。</li>
+<li>The input parameter limit is not valid. limit should be less than 200？<br />
+<a class="link"   target="_blank" rel="noopener" href="https://github.com/Xhofe/alist-web/issues/22" >Xhofe/alist-web#22<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h1 id="buy-me-a-coffee"><a class="markdownIt-Anchor" href="#buy-me-a-coffee"></a> Buy me a coffee</h1>
+<p>If you are using this project and happy with it or just want to encourage me to continue creating stuff,buy me a coffee by click <a class="link"   target="_blank" rel="noopener" href="https://pay.xhofe.top" >this<i class="fas fa-external-link-alt"></i></a> 。Thanks：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/zsbai" >zsbai<i class="fas fa-external-link-alt"></i></a> ：请一杯奶茶?</li>
+<li>白鹭</li>
+<li>不知名</li>
+<li>永胜</li>
+<li>MFYDev</li>
+<li>HakimYu</li>
+<li>Moc̶k̶i̶n̶gbird</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：阿里云盘列表AList部署教程(V1)</li>
+        <li>本文作者：Xhofe</li>
+        <li>创建时间：2021-03-13 14:08:00</li>
+        <li>
+            本文链接：https://nn.ci/posts/alist-v1.html
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/go/">#go</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/vue/">#vue</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/gin/">#gin</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/alist/">#alist</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/github/">#github</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/posts/cpp-size_t-compare.html"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">C++中size_t循环的坑</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/posts/mac-software.html"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">mac应用推荐</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+          
+    <div class="waline-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        <div id="wcomments"></div>
+        <script data-pjax>
+            function loadWaline() {
+              Waline({
+                el: '#wcomments',
+                serverURL: 'https://waline-xhofe.vercel.app',
+                dark: 'body.dark-mode',
+                uploadImage: false,
+              });
+              function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+            }
+            if ('true') {
+                const loadWalineTimeout = setTimeout(() => {
+                    loadWaline();
+                    clearTimeout(loadWalineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadWaline);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Xhofe</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?dd18303f1d622e40a6fd71c2510b2bab";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80"><span class="nav-number">2.</span> <span class="nav-text"> 项目地址：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%83%A8%E7%BD%B2by-%E5%A4%A7%E7%99%BD%E4%B8%80%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text"> 快捷部署（by 大白一号）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text"> 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#202151"><span class="nav-number">4.1.</span> <span class="nav-text"> 2021.5.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021331"><span class="nav-number">4.2.</span> <span class="nav-text"> 2021.3.31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021317"><span class="nav-number">4.3.</span> <span class="nav-text"> 2021.3.17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021313"><span class="nav-number">4.4.</span> <span class="nav-text"> 2021.3.13</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E8%A7%88"><span class="nav-number">5.</span> <span class="nav-text"> 预览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2"><span class="nav-number">6.</span> <span class="nav-text"> 如何部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96refresh_token"><span class="nav-number">6.1.</span> <span class="nav-text"> 获取refresh_token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">6.2.</span> <span class="nav-text"> 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8gin%E4%BD%9C%E4%B8%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.2.1.</span> <span class="nav-text"> 使用gin作为静态资源服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%8F%AF%E9%80%89"><span class="nav-number">6.2.1.1.</span> <span class="nav-text"> 守护进程（可选）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8mysql%E5%8F%AF%E9%80%89"><span class="nav-number">6.2.1.2.</span> <span class="nav-text"> 使用mysql（可选）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.2.2.</span> <span class="nav-text"> 自定义静态资源服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">6.2.3.</span> <span class="nav-text"> 反向代理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="nav-number">7.</span> <span class="nav-text"> 常见问题解答</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#buy-me-a-coffee"><span class="nav-number">8.</span> <span class="nav-text"> Buy me a coffee</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
