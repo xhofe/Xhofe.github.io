@@ -2984,3 +2984,7 @@ pre .javascript .function {
   display: inline-block;
   box-sizing: border-box;
 }
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
