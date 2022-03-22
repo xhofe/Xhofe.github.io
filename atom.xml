@@ -475,9 +475,9 @@
     <category term="tools" scheme="https://nn.ci/categories/tools/"/>
     
     
-    <category term="linux" scheme="https://nn.ci/tags/linux/"/>
-    
     <category term="java" scheme="https://nn.ci/tags/java/"/>
+    
+    <category term="linux" scheme="https://nn.ci/tags/linux/"/>
     
   </entry>
   
