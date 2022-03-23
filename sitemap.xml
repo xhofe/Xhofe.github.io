@@ -343,14 +343,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/github/</loc>
+    <loc>https://nn.ci/tags/react/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/react/</loc>
+    <loc>https://nn.ci/tags/github/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -385,6 +385,13 @@
   </url>
   
   <url>
+    <loc>https://nn.ci/tags/sort/</loc>
+    <lastmod>2022-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://nn.ci/tags/C/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -399,7 +406,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/sort/</loc>
+    <loc>https://nn.ci/tags/test/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -413,14 +420,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/test/</loc>
+    <loc>https://nn.ci/tags/hexo/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/hexo/</loc>
+    <loc>https://nn.ci/tags/linux/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -442,13 +449,6 @@
   
   <url>
     <loc>https://nn.ci/tags/tcp/</loc>
-    <lastmod>2022-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nn.ci/tags/linux/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -513,14 +513,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/tools/</loc>
+    <loc>https://nn.ci/categories/code/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/code/</loc>
+    <loc>https://nn.ci/categories/tools/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

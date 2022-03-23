@@ -1,2 +1,2 @@
-/archives/  /posts/ 302
-/*  /404/ 404
+/archives/*    /posts/:splat  302
+/*             /404/          404
