@@ -195,9 +195,9 @@
     
     <category term="alist" scheme="https://nn.ci/tags/alist/"/>
     
-    <category term="react" scheme="https://nn.ci/tags/react/"/>
-    
     <category term="github" scheme="https://nn.ci/tags/github/"/>
+    
+    <category term="react" scheme="https://nn.ci/tags/react/"/>
     
   </entry>
   
@@ -548,9 +548,9 @@
     <category term="tools" scheme="https://nn.ci/categories/tools/"/>
     
     
-    <category term="linux" scheme="https://nn.ci/tags/linux/"/>
-    
     <category term="java" scheme="https://nn.ci/tags/java/"/>
+    
+    <category term="linux" scheme="https://nn.ci/tags/linux/"/>
     
   </entry>
   
