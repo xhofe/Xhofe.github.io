@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://nn.ci/categories/index.html</loc>
+    <loc>https://nn.ci/links/index.html</loc>
+    
+    <lastmod>2022-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nn.ci/tags/index.html</loc>
     
     <lastmod>2022-03-23</lastmod>
     
@@ -20,16 +29,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/links/index.html</loc>
-    
-    <lastmod>2022-03-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://nn.ci/tags/index.html</loc>
+    <loc>https://nn.ci/categories/index.html</loc>
     
     <lastmod>2022-03-23</lastmod>
     
@@ -343,14 +343,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/github/</loc>
+    <loc>https://nn.ci/tags/react/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/react/</loc>
+    <loc>https://nn.ci/tags/github/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -413,13 +413,6 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/hexo/</loc>
-    <lastmod>2022-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://nn.ci/tags/CI-CD/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -427,7 +420,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/linux/</loc>
+    <loc>https://nn.ci/tags/hexo/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -449,6 +442,13 @@
   
   <url>
     <loc>https://nn.ci/tags/tcp/</loc>
+    <lastmod>2022-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nn.ci/tags/linux/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
