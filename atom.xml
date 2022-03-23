@@ -18,8 +18,8 @@
   
   <entry>
     <title>Leetcode 2039. 网络空闲的时刻</title>
-    <link href="https://nn.ci/posts/leetcode-2039.html"/>
-    <id>https://nn.ci/posts/leetcode-2039.html</id>
+    <link href="https://nn.ci/posts/leetcode-2039/"/>
+    <id>https://nn.ci/posts/leetcode-2039/</id>
     <published>2022-03-22T06:08:00.000Z</published>
     <updated>2022-03-22T06:08:00.000Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>Leetcode 798. 得分最高的最小轮调</title>
-    <link href="https://nn.ci/posts/leetcode-798.html"/>
-    <id>https://nn.ci/posts/leetcode-798.html</id>
+    <link href="https://nn.ci/posts/leetcode-798/"/>
+    <id>https://nn.ci/posts/leetcode-798/</id>
     <published>2022-03-11T06:08:00.000Z</published>
     <updated>2022-03-11T06:08:00.000Z</updated>
     
@@ -66,8 +66,8 @@
   
   <entry>
     <title>Rust中的crate和mod</title>
-    <link href="https://nn.ci/posts/rust-crate-mod.html"/>
-    <id>https://nn.ci/posts/rust-crate-mod.html</id>
+    <link href="https://nn.ci/posts/rust-crate-mod/"/>
+    <id>https://nn.ci/posts/rust-crate-mod/</id>
     <published>2022-02-17T06:08:00.000Z</published>
     <updated>2022-02-17T06:08:00.000Z</updated>
     
@@ -93,8 +93,8 @@
   
   <entry>
     <title>宝塔部署Alist教程</title>
-    <link href="https://nn.ci/posts/bt-alist.html"/>
-    <id>https://nn.ci/posts/bt-alist.html</id>
+    <link href="https://nn.ci/posts/bt-alist/"/>
+    <id>https://nn.ci/posts/bt-alist/</id>
     <published>2022-01-17T06:08:00.000Z</published>
     <updated>2022-01-17T06:08:00.000Z</updated>
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>目录列表程序AList使用教程</title>
-    <link href="https://nn.ci/posts/alist.html"/>
-    <id>https://nn.ci/posts/alist.html</id>
+    <link href="https://nn.ci/posts/alist/"/>
+    <id>https://nn.ci/posts/alist/</id>
     <published>2021-11-03T06:08:00.000Z</published>
     <updated>2021-11-03T06:08:00.000Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title>C++中size_t循环的坑</title>
-    <link href="https://nn.ci/posts/cpp-size_t-compare.html"/>
-    <id>https://nn.ci/posts/cpp-size_t-compare.html</id>
+    <link href="https://nn.ci/posts/cpp-size_t-compare/"/>
+    <id>https://nn.ci/posts/cpp-size_t-compare/</id>
     <published>2021-04-13T06:08:00.000Z</published>
     <updated>2021-04-13T06:08:00.000Z</updated>
     
@@ -175,8 +175,8 @@
   
   <entry>
     <title>阿里云盘列表AList部署教程(V1)</title>
-    <link href="https://nn.ci/posts/alist-v1.html"/>
-    <id>https://nn.ci/posts/alist-v1.html</id>
+    <link href="https://nn.ci/posts/alist-v1/"/>
+    <id>https://nn.ci/posts/alist-v1/</id>
     <published>2021-03-13T06:08:00.000Z</published>
     <updated>2021-03-13T06:08:00.000Z</updated>
     
@@ -209,8 +209,8 @@
   
   <entry>
     <title>mac应用推荐</title>
-    <link href="https://nn.ci/posts/mac-software.html"/>
-    <id>https://nn.ci/posts/mac-software.html</id>
+    <link href="https://nn.ci/posts/mac-software/"/>
+    <id>https://nn.ci/posts/mac-software/</id>
     <published>2021-02-24T06:08:00.000Z</published>
     <updated>2021-02-24T06:08:00.000Z</updated>
     
@@ -235,8 +235,8 @@
   
   <entry>
     <title>常用命令与脚本收集</title>
-    <link href="https://nn.ci/posts/commands-scripts.html"/>
-    <id>https://nn.ci/posts/commands-scripts.html</id>
+    <link href="https://nn.ci/posts/commands-scripts/"/>
+    <id>https://nn.ci/posts/commands-scripts/</id>
     <published>2021-01-27T06:08:00.000Z</published>
     <updated>2021-01-27T06:08:00.000Z</updated>
     
@@ -262,8 +262,8 @@
   
   <entry>
     <title>阿里云盘列表AList部署教程(V0)</title>
-    <link href="https://nn.ci/posts/alist-v0.html"/>
-    <id>https://nn.ci/posts/alist-v0.html</id>
+    <link href="https://nn.ci/posts/alist-v0/"/>
+    <id>https://nn.ci/posts/alist-v0/</id>
     <published>2020-12-25T06:08:00.000Z</published>
     <updated>2020-12-25T06:08:00.000Z</updated>
     
@@ -294,8 +294,8 @@
   
   <entry>
     <title>使用Jmeter接口进行Java二次开发(Socket-TCP)</title>
-    <link href="https://nn.ci/posts/jmeter-tcp-dev.html"/>
-    <id>https://nn.ci/posts/jmeter-tcp-dev.html</id>
+    <link href="https://nn.ci/posts/jmeter-tcp-dev/"/>
+    <id>https://nn.ci/posts/jmeter-tcp-dev/</id>
     <published>2020-12-03T03:30:00.000Z</published>
     <updated>2020-12-03T03:30:00.000Z</updated>
     
@@ -324,8 +324,8 @@
   
   <entry>
     <title>go实现一个极简的短链接服务</title>
-    <link href="https://nn.ci/posts/go-shorturl.html"/>
-    <id>https://nn.ci/posts/go-shorturl.html</id>
+    <link href="https://nn.ci/posts/go-shorturl/"/>
+    <id>https://nn.ci/posts/go-shorturl/</id>
     <published>2020-12-01T06:08:00.000Z</published>
     <updated>2020-12-01T06:08:00.000Z</updated>
     
@@ -349,8 +349,8 @@
   
   <entry>
     <title>C++ 多线程使用</title>
-    <link href="https://nn.ci/posts/cpp-multithreading.html"/>
-    <id>https://nn.ci/posts/cpp-multithreading.html</id>
+    <link href="https://nn.ci/posts/cpp-multithreading/"/>
+    <id>https://nn.ci/posts/cpp-multithreading/</id>
     <published>2020-10-01T06:08:00.000Z</published>
     <updated>2020-10-01T06:08:00.000Z</updated>
     
@@ -377,8 +377,8 @@
   
   <entry>
     <title>ubuntu安装配置Jenkins与SonarQube</title>
-    <link href="https://nn.ci/posts/jenkins-sonarqube.html"/>
-    <id>https://nn.ci/posts/jenkins-sonarqube.html</id>
+    <link href="https://nn.ci/posts/jenkins-sonarqube/"/>
+    <id>https://nn.ci/posts/jenkins-sonarqube/</id>
     <published>2020-09-13T09:20:18.000Z</published>
     <updated>2020-09-13T09:20:18.000Z</updated>
     
@@ -405,8 +405,8 @@
   
   <entry>
     <title>移除类dp问题</title>
-    <link href="https://nn.ci/posts/remove-dp.html"/>
-    <id>https://nn.ci/posts/remove-dp.html</id>
+    <link href="https://nn.ci/posts/remove-dp/"/>
+    <id>https://nn.ci/posts/remove-dp/</id>
     <published>2020-07-01T09:20:18.000Z</published>
     <updated>2020-07-30T09:20:18.000Z</updated>
     
@@ -432,8 +432,8 @@
   
   <entry>
     <title>Leetcode 2020-05月份每日一题</title>
-    <link href="https://nn.ci/posts/20-05-leetcode.html"/>
-    <id>https://nn.ci/posts/20-05-leetcode.html</id>
+    <link href="https://nn.ci/posts/20-05-leetcode/"/>
+    <id>https://nn.ci/posts/20-05-leetcode/</id>
     <published>2020-05-01T09:20:18.000Z</published>
     <updated>2020-05-30T09:20:18.000Z</updated>
     
@@ -459,8 +459,8 @@
   
   <entry>
     <title>hexo-next增加友链页面</title>
-    <link href="https://nn.ci/posts/hexo-next-add-links.html"/>
-    <id>https://nn.ci/posts/hexo-next-add-links.html</id>
+    <link href="https://nn.ci/posts/hexo-next-add-links/"/>
+    <id>https://nn.ci/posts/hexo-next-add-links/</id>
     <published>2020-04-28T09:20:18.000Z</published>
     <updated>2020-04-28T09:20:18.000Z</updated>
     
@@ -481,8 +481,8 @@
   
   <entry>
     <title>Linux安装Java</title>
-    <link href="https://nn.ci/posts/linux-install-java.html"/>
-    <id>https://nn.ci/posts/linux-install-java.html</id>
+    <link href="https://nn.ci/posts/linux-install-java/"/>
+    <id>https://nn.ci/posts/linux-install-java/</id>
     <published>2020-04-19T09:20:18.000Z</published>
     <updated>2020-04-19T09:20:18.000Z</updated>
     
@@ -507,8 +507,8 @@
   
   <entry>
     <title>VIM的简单使用</title>
-    <link href="https://nn.ci/posts/vim-simple-used.html"/>
-    <id>https://nn.ci/posts/vim-simple-used.html</id>
+    <link href="https://nn.ci/posts/vim-simple-used/"/>
+    <id>https://nn.ci/posts/vim-simple-used/</id>
     <published>2020-04-15T09:20:18.000Z</published>
     <updated>2020-04-15T09:20:18.000Z</updated>
     
@@ -533,8 +533,8 @@
   
   <entry>
     <title>使用CF时无法使用office view预览</title>
-    <link href="https://nn.ci/posts/cf-office-view.html"/>
-    <id>https://nn.ci/posts/cf-office-view.html</id>
+    <link href="https://nn.ci/posts/cf-office-view/"/>
+    <id>https://nn.ci/posts/cf-office-view/</id>
     <published>2020-04-13T09:20:18.000Z</published>
     <updated>2020-04-13T09:20:18.000Z</updated>
     

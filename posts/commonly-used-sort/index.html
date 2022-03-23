@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Xhofe">
+    <link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.10.2/katex.min.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6488351372249466" crossorigin="anonymous"></script>
+    
+    <title>
+        
+            常用排序算法 |
+        
+        Xhofe&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"nn.ci","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep coding and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Xhofe' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Xhofe&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives/"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories/"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags/"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links/"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives/">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories/">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags/">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links/">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">常用排序算法</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Xhofe</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-04-01 17:20:18</span>
+        <span class="mobile">2020-04-01 17:20</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/algorithm/">algorithm</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/sort/">sort</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="sort"><a class="markdownIt-Anchor" href="#sort"></a> Sort</h3>
+<p>记录一些常用的排序算法</p>
+<span id="more"></span>
+<h5 id="todo"><a class="markdownIt-Anchor" href="#todo"></a> todo</h5>
+<ul>
+<li>桶排序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Queue;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 复习排序算法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Sort</span> &#123;</span><br><span class="line">    <span class="comment">//比较类排序-------------------------------------------------------------</span></span><br><span class="line">    <span class="comment">//交换类----------------------</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 冒泡排序(稳定)：每次走完一趟，最大的值就会到最后</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">boolean</span> flag;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            flag = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    swap(arr, j, j + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 快速排序(不稳定)</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        quickSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> partition(arr, left, right);</span><br><span class="line">            quickSort(arr, left, index - <span class="number">1</span>);</span><br><span class="line">            quickSort(arr, index + <span class="number">1</span>, right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pivot</span> <span class="operator">=</span> arr[left];</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> left + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt;= right; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">                swap(arr, i, index);</span><br><span class="line">                ++index;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, left, index - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> index - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//插入类---------------------</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 插入排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span> || arr.length == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;</span><br><span class="line">            <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; arr[j] &lt; arr[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                swap(arr, j, j - <span class="number">1</span>);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 希尔排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">shellSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">gap</span> <span class="operator">=</span> len / <span class="number">2</span>; gap &gt; <span class="number">0</span>; gap = gap / <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> gap; i &lt; len; i++) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;</span><br><span class="line">                <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> arr[i];</span><br><span class="line">                <span class="keyword">while</span> (j &gt;= gap &amp;&amp; cur &lt; arr[j - gap]) &#123;</span><br><span class="line">                    arr[j] = arr[j - gap];</span><br><span class="line">                    j = j - gap;</span><br><span class="line">                &#125;</span><br><span class="line">                arr[j] = cur;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//选择类---------------------</span></span><br><span class="line">    <span class="comment">//选择排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">selectSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> minIndex;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            minIndex = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 堆排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">heapify</span><span class="params">(<span class="type">int</span>[] tree, <span class="type">int</span> n, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= n) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> i;</span><br><span class="line">        <span class="type">int</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="number">2</span> * i + <span class="number">1</span>, c2 = <span class="number">2</span> * i + <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (c1 &lt; n &amp;&amp; tree[c1] &gt; tree[max]) max = c1;</span><br><span class="line">        <span class="keyword">if</span> (c2 &lt; n &amp;&amp; tree[c2] &gt; tree[max]) max = c2;</span><br><span class="line">        <span class="keyword">if</span> (max != i) &#123;</span><br><span class="line">            swap(tree, max, i);</span><br><span class="line">            heapify(tree, n, max);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">buildHeap</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">last_parent</span> <span class="operator">=</span> (len) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> last_parent; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            heapify(arr, len, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">heapSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        buildHeap(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            swap(arr,<span class="number">0</span>,i);</span><br><span class="line">            heapify(arr,i,<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//归并类---------------------</span></span><br><span class="line">    <span class="comment">//归并</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        mergeSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (left &gt;= right) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right) / <span class="number">2</span>;</span><br><span class="line">        mergeSort(arr, left, mid);</span><br><span class="line">        mergeSort(arr, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="type">int</span>[] tmp = <span class="keyword">new</span> <span class="title class_">int</span>[right - left + <span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>, index1 = left, index2 = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt;= mid &amp;&amp; index2 &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[index1] &lt; arr[index2]) &#123;</span><br><span class="line">                tmp[index++] = arr[index1++];</span><br><span class="line">            &#125; <span class="keyword">else</span> tmp[index++] = arr[index2++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt;= mid) tmp[index++] = arr[index1++];</span><br><span class="line">        <span class="keyword">while</span> (index2 &lt;= right) tmp[index++] = arr[index2++];</span><br><span class="line">        System.arraycopy(tmp, <span class="number">0</span>, arr, left, tmp.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非比较排序--------------------------------------------------------------</span></span><br><span class="line">    <span class="comment">//计数排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">countingSort</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> maxValue)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] counts = <span class="keyword">new</span> <span class="title class_">int</span>[maxValue + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr) &#123;</span><br><span class="line">            counts[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; maxValue + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> counts[i];</span><br><span class="line">            <span class="keyword">while</span> (count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                count--;</span><br><span class="line">                arr[index++] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//TODO 桶排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bucketSort</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> bucketSize)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxValue</span> <span class="operator">=</span> arr[<span class="number">0</span>], minValue = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &gt; maxValue) maxValue = arr[i];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (arr[i] &lt; minValue) minValue = arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">bucketCount</span> <span class="operator">=</span> (maxValue - minValue) / bucketSize + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//基数排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">radixSort</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> maxDigit)</span> &#123;</span><br><span class="line">        Map&lt;Integer, Queue&lt;Integer&gt;&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">mod</span> <span class="operator">=</span> <span class="number">10</span>, dev = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; maxDigit; i++, dev *= <span class="number">10</span>, mod *= <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> value : arr) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">bucket</span> <span class="operator">=</span> (value % mod) / dev;</span><br><span class="line">                <span class="keyword">if</span> (!map.containsKey(bucket)) &#123;</span><br><span class="line">                    map.put(bucket, <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;());</span><br><span class="line">                &#125;</span><br><span class="line">                map.get(bucket).add(value);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> <span class="variable">pos</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(j)) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> map.get(j).size();</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; len; k++) &#123;</span><br><span class="line">                        arr[pos++] = map.get(j).poll();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 交换数组的值</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr 数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i   下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j   另一个下标</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">11</span>, <span class="number">2</span>&#125;;</span><br><span class="line"><span class="comment">//        Sort.radixSort(arr, 2);</span></span><br><span class="line">        heapSort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i : arr) &#123;</span><br><span class="line">            System.out.printf(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：常用排序算法</li>
+        <li>本文作者：Xhofe</li>
+        <li>创建时间：2020-04-01 17:20:18</li>
+        <li>
+            本文链接：https://nn.ci/posts/commonly-used-sort/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/sort/">#sort</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/posts/20-04-leetcode/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Leetcode 2020-04月份每日一题</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/posts/20-03-leetcode/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Leetcode 2020-03月份每日一题</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+          
+    <div class="waline-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        <div id="wcomments"></div>
+        <script data-pjax>
+            function loadWaline() {
+              Waline({
+                el: '#wcomments',
+                serverURL: 'https://waline-xhofe.vercel.app',
+                dark: 'body.dark-mode',
+                uploadImage: false,
+              });
+              function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+            }
+            if ('true') {
+                const loadWalineTimeout = setTimeout(() => {
+                    loadWaline();
+                    clearTimeout(loadWalineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadWaline);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Xhofe</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?dd18303f1d622e40a6fd71c2510b2bab";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">1.</span> <span class="nav-text"> Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#todo"><span class="nav-number">1.0.1.</span> <span class="nav-text"> todo</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
