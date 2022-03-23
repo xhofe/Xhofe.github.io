@@ -2988,3 +2988,6 @@ pre .javascript .function {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.markdown-body img {
+  display: unset !important;
+}

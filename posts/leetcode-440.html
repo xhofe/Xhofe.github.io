@@ -11,7 +11,7 @@
     
     <title>
         
-            Linux安装Java |
+            Leetcode 440. 字典序的第K小数字 |
         
         Xhofe&#39;s Blog
     </title>
@@ -186,7 +186,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Linux安装Java</span>
+            <span class="title-hover-animation">Leetcode 440. 字典序的第K小数字</span>
         </div>
 
         
@@ -205,8 +205,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2020-04-19 17:20:18</span>
-        <span class="mobile">2020-04-19 17:20</span>
+        <span class="pc">2022-03-23 14:08:00</span>
+        <span class="mobile">2022-03-23 14:08</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -214,7 +214,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/tools/">tools</a>&nbsp;
+                        <a href="/categories/algorithm/">algorithm</a>&nbsp;
                     </li>
                 
             </ul>
@@ -226,11 +226,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/java/">java</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/linux/">linux</a>&nbsp;
+                        <a href="/tags/rust/">rust</a>&nbsp;
                     </li>
                 
             </ul>
@@ -240,12 +236,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>635 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>441 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
         </span>
     
     
@@ -261,50 +257,49 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="java安装"><a class="markdownIt-Anchor" href="#java安装"></a> Java安装</h3>
-<blockquote>
-<p>每次新（重置）系统需要用到Java的时候，都要去上网搜索安装一番，故记录在此。</p>
-</blockquote>
-<span id="more"></span>
-<h5 id="获取url"><a class="markdownIt-Anchor" href="#获取url"></a> 获取url</h5>
-<p>打开(<a class="link"   target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html" >https://www.oracle.com/java/technologies/javase-jdk8-downloads.html<i class="fas fa-external-link-alt"></i></a>)选择Linux x64 Compressed Archive复制下载地址。</p>
-<h5 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<p>如果此处提示<code>-bash:wget command not found</code></p>
-<p>则输入：<code>yum -y install wget</code>安装一下<code>wget</code></p>
-<p>国外建议直接使用此链接<code>https://data.lvss.tk/applications/jdk-8u251-linux-x64.tar.gz</code></p>
-<blockquote>
-<p>现在Oracle必须要登录才可以下载了。所以自寻下载链接。我这里选择先登录下载到本地在上传至Google drive下载。(阿里云5M小水管下到死,还是选择了直接ssh)</p>
-</blockquote>
-<h5 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建安装目录</span></span><br><span class="line"><span class="built_in">mkdir</span> /usr/local/java/</span><br><span class="line"><span class="comment">#解压至安装目录</span></span><br><span class="line">tar -zxvf jdk-8u251-linux-x64.tar.gz -C /usr/local/java/</span><br></pre></td></tr></table></figure>
-<h5 id="设置环境变量"><a class="markdownIt-Anchor" href="#设置环境变量"></a> 设置环境变量</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#添加</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/java/jdk1.8.0_251</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="comment">#添加软连接（可选）</span></span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/java/jdk1.8.0_251/bin/java /usr/bin/java</span><br></pre></td></tr></table></figure>
-<h5 id="验证是否成功"><a class="markdownIt-Anchor" href="#验证是否成功"></a> 验证是否成功</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">java version <span class="string">&quot;1.8.0_251&quot;</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_251-b08)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)</span><br></pre></td></tr></table></figure>
-<h4 id="maven安装"><a class="markdownIt-Anchor" href="#maven安装"></a> Maven安装</h4>
-<h5 id="下载maven"><a class="markdownIt-Anchor" href="#下载maven"></a> 下载Maven</h5>
-<p>在<a class="link"   target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi" >下载页面<i class="fas fa-external-link-alt"></i></a>选择需要的版本进行下载，这里我选择<a class="link"   target="_blank" rel="noopener" href="http://apache.communilink.net/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz" > apache-maven-3.6.3-bin.tar.gz<i class="fas fa-external-link-alt"></i></a>，右键复制链接地址，然后：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://apache.communilink.net/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz</span><br></pre></td></tr></table></figure>
-<h5 id="安装-2"><a class="markdownIt-Anchor" href="#安装-2"></a> 安装</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local/java/</span><br></pre></td></tr></table></figure>
-<h5 id="设置环境变量-2"><a class="markdownIt-Anchor" href="#设置环境变量-2"></a> 设置环境变量</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#添加</span></span><br><span class="line"><span class="built_in">export</span> M2_HOME=/usr/local/java/apache-maven-3.6.3</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;M2_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-<h5 id="验证是否成功-2"><a class="markdownIt-Anchor" href="#验证是否成功-2"></a> 验证是否成功</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br><span class="line">Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)</span><br><span class="line">Maven home: /usr/local/java/apache-maven-3.6.3</span><br><span class="line">Java version: 1.8.0_251, vendor: Oracle Corporation, runtime: /usr/local/java/jdk1.8.0_251/jre</span><br><span class="line">Default locale: zh_CN, platform encoding: UTF-8</span><br><span class="line">OS name: <span class="string">&quot;linux&quot;</span>, version: <span class="string">&quot;3.10.0-1127.8.2.el7.x86_64&quot;</span>, <span class="built_in">arch</span>: <span class="string">&quot;amd64&quot;</span>, family: <span class="string">&quot;unix&quot;</span></span><br></pre></td></tr></table></figure>
-<h5 id="更改默认的仓库位置与maven阿里云镜像"><a class="markdownIt-Anchor" href="#更改默认的仓库位置与maven阿里云镜像"></a> 更改默认的仓库位置与maven阿里云镜像：</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建仓库文件夹</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/maven/repository</span><br><span class="line"><span class="comment"># 备份默认的配置文件</span></span><br><span class="line"><span class="built_in">cd</span> /mnt/maven/apache-maven-3.6.3/conf</span><br><span class="line"><span class="built_in">cp</span> settings.xml settings-backup.xml</span><br><span class="line">vim settings.xml</span><br><span class="line"><span class="comment"># 在settings标签中添加</span></span><br><span class="line">&lt;localRepository&gt;/mnt/maven/repository&lt;/localRepository&gt;</span><br><span class="line"><span class="comment"># 添加mirrors子节点</span></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;<span class="built_in">id</span>&gt;aliyunmaven&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云公共仓库&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+            <h1 id="leetcode-440-字典序的第k小数字-difficulty"><a class="markdownIt-Anchor" href="#leetcode-440-字典序的第k小数字-difficulty"></a> Leetcode <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order/" >440. 字典序的第K小数字<i class="fas fa-external-link-alt"></i></a> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://shields.io/badge/-Hard-red"
+                      alt="Difficulty" 
+                ></h1>
+<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述：</h2>
+<p>给定整数 <code>n</code> 和 <code>k</code>，返回 <code>[1, n]</code> 中字典序第 <code>k</code> 小的数字。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: n = 13, k = 2</span><br><span class="line">输出: 10</span><br><span class="line">解释: 字典序的排列是 [1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]，所以第二小的数字是 10。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: n = 1, k = 1</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt;= n &lt;= 109</code></li>
+</ul>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<p>通过观察字典序的排列可以发现以下规律：</p>
+<ul>
+<li>以i+1开头的字典序肯定大于以i开头的</li>
+<li>i*10 =&gt; 字典序+1</li>
+<li>i+1 =&gt; 字典序+(i+1作为前缀的最小值 - i作为前缀的最小值)</li>
+</ul>
+<p>要找到在[1,n]中第k小的数字，我们肯定需要从以i作为前缀的开始数，首先需要计算出以i为前缀的个数，以i为前缀的个数即：以i+1为前缀的最小值-以i为前缀的最小值，且这些值都必须小于n。</p>
+<p>找到以i为前缀的个数count后，有两种情况：</p>
+<ul>
+<li>k&gt;count，说明以i为前缀的个数不够，还需要继续去找i+1的，k-=count，将i+1；</li>
+<li>k&lt;=count，则说明第k小的数字就是以i开头的，那么通过将i*10将字典序+1，然后重复上面的步骤就可以找出第k小字典序的数字了。</li>
+</ul>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">find_kth_number</span>(n: <span class="type">i32</span>, k: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> (<span class="keyword">mut</span> k, <span class="keyword">mut</span> cur, n) = ((k - <span class="number">1</span>) <span class="keyword">as</span> <span class="type">i64</span>, <span class="number">1</span> <span class="keyword">as</span> <span class="type">i64</span>, n <span class="keyword">as</span> <span class="type">i64</span>);</span><br><span class="line">        <span class="keyword">while</span> k &gt; <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> (<span class="keyword">mut</span> count, <span class="keyword">mut</span> first, <span class="keyword">mut</span> last) = (<span class="number">0</span>, cur, cur + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> first &lt;= n &#123;</span><br><span class="line">                count += last.<span class="title function_ invoke__">min</span>(n + <span class="number">1</span>) - first;</span><br><span class="line">                first *= <span class="number">10</span>;</span><br><span class="line">                last *= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> count &lt;= k &#123;</span><br><span class="line">                cur += <span class="number">1</span>;</span><br><span class="line">                k -= count;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cur *= <span class="number">10</span>;</span><br><span class="line">                k -= <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cur <span class="keyword">as</span> <span class="type">i32</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Linux安装Java</li>
+        <li>本文标题：Leetcode 440. 字典序的第K小数字</li>
         <li>本文作者：Xhofe</li>
-        <li>创建时间：2020-04-19 17:20:18</li>
+        <li>创建时间：2022-03-23 14:08:00</li>
         <li>
-            本文链接：https://nn.ci/posts/linux-install-java.html
+            本文链接：https://nn.ci/posts/leetcode-440.html
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -319,11 +314,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/java/">#java</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/linux/">#linux</a>&nbsp;
+                        <a href="/tags/rust/">#rust</a>&nbsp;
                     </li>
                 
             </ul>
@@ -332,29 +323,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/posts/hexo-next-add-links.html"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">hexo-next增加友链页面</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/posts/vim-simple-used.html"
+                           href="/posts/leetcode-2039.html"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">VIM的简单使用</span>
+                                <span class="post-nav-title-item">Leetcode 2039. 网络空闲的时刻</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -554,7 +530,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> Java安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96url"><span class="nav-number">1.0.1.</span> <span class="nav-text"> 获取url</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.0.2.</span> <span class="nav-text"> 下载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.0.3.</span> <span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.0.4.</span> <span class="nav-text"> 设置环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-number">1.0.5.</span> <span class="nav-text"> 验证是否成功</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maven%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text"> Maven安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDmaven"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 下载Maven</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-2"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-2"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 设置环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F-2"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 验证是否成功</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84%E4%BB%93%E5%BA%93%E4%BD%8D%E7%BD%AE%E4%B8%8Emaven%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F"><span class="nav-number">1.1.5.</span> <span class="nav-text"> 更改默认的仓库位置与maven阿里云镜像：</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode-440-%E5%AD%97%E5%85%B8%E5%BA%8F%E7%9A%84%E7%AC%ACk%E5%B0%8F%E6%95%B0%E5%AD%97-difficulty"><span class="nav-number">1.</span> <span class="nav-text"> Leetcode 440. 字典序的第K小数字 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text"> 题目描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text"> 思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text"> 代码</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
