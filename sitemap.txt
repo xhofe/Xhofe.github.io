@@ -1,5 +1,5 @@
-https://nn.ci/categories/index.html
 https://nn.ci/about/index.html
+https://nn.ci/categories/index.html
 https://nn.ci/links/index.html
 https://nn.ci/tags/index.html
 https://nn.ci/404/index.html
@@ -46,9 +46,9 @@ https://nn.ci/tags/scripts/
 https://nn.ci/tags/C/
 https://nn.ci/tags/multithreading/
 https://nn.ci/tags/sort/
+https://nn.ci/tags/CI-CD/
 https://nn.ci/tags/test/
 https://nn.ci/tags/hexo/
-https://nn.ci/tags/CI-CD/
 https://nn.ci/tags/java/
 https://nn.ci/tags/jmeter/
 https://nn.ci/tags/tcp/
@@ -61,6 +61,6 @@ https://nn.ci/categories/algorithm/
 https://nn.ci/categories/tutorials/
 https://nn.ci/categories/issues/
 https://nn.ci/categories/projects/
-https://nn.ci/categories/code/
 https://nn.ci/categories/tools/
+https://nn.ci/categories/code/
 https://nn.ci/categories/learning/
