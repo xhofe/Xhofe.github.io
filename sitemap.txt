@@ -37,15 +37,15 @@ https://nn.ci/tags/go/
 https://nn.ci/tags/vue/
 https://nn.ci/tags/gin/
 https://nn.ci/tags/alist/
+https://nn.ci/tags/react/
 https://nn.ci/tags/github/
 https://nn.ci/tags/bt/
 https://nn.ci/tags/cloudflare/
-https://nn.ci/tags/react/
 https://nn.ci/tags/commands/
 https://nn.ci/tags/scripts/
-https://nn.ci/tags/sort/
 https://nn.ci/tags/C/
 https://nn.ci/tags/multithreading/
+https://nn.ci/tags/sort/
 https://nn.ci/tags/CI-CD/
 https://nn.ci/tags/test/
 https://nn.ci/tags/hexo/
@@ -60,7 +60,7 @@ https://nn.ci/tags/vim/
 https://nn.ci/categories/algorithm/
 https://nn.ci/categories/tutorials/
 https://nn.ci/categories/issues/
-https://nn.ci/categories/tools/
 https://nn.ci/categories/projects/
+https://nn.ci/categories/tools/
 https://nn.ci/categories/code/
 https://nn.ci/categories/learning/
