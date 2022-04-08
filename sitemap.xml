@@ -47,6 +47,15 @@
   </url>
   
   <url>
+    <loc>https://nn.ci/posts/go-rust-cross-compile.html</loc>
+    
+    <lastmod>2022-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://nn.ci/posts/leetcode-440.html</loc>
     
     <lastmod>2022-03-23</lastmod>
@@ -336,13 +345,6 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/github/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://nn.ci/tags/alist/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -350,7 +352,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/react/</loc>
+    <loc>https://nn.ci/tags/github/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nn.ci/tags/bt/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -364,7 +373,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/bt/</loc>
+    <loc>https://nn.ci/tags/react/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -406,7 +415,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/CI-CD/</loc>
+    <loc>https://nn.ci/tags/rust/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -414,6 +423,13 @@
   
   <url>
     <loc>https://nn.ci/tags/test/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nn.ci/tags/CI-CD/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -455,7 +471,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/rust/</loc>
+    <loc>https://nn.ci/tags/mac/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -463,13 +479,6 @@
   
   <url>
     <loc>https://nn.ci/tags/dp/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nn.ci/tags/mac/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -513,7 +522,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/tools/</loc>
+    <loc>https://nn.ci/categories/learning/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -527,7 +536,7 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/learning/</loc>
+    <loc>https://nn.ci/categories/tools/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

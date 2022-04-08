@@ -6,7 +6,7 @@
   <link href="https://nn.ci/atom.xml" rel="self"/>
   
   <link href="https://nn.ci/"/>
-  <updated>2022-03-23T06:08:00.000Z</updated>
+  <updated>2022-04-08T06:08:00.000Z</updated>
   <id>https://nn.ci/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Golang与Rust交叉编译</title>
+    <link href="https://nn.ci/posts/go-rust-cross-compile.html"/>
+    <id>https://nn.ci/posts/go-rust-cross-compile.html</id>
+    <published>2022-04-08T06:08:00.000Z</published>
+    <updated>2022-04-08T06:08:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="交叉编译"><a class="markdownIt-Anchor" href="#交叉编译"></a> 交叉编译</h2><p>交叉编译一般是指在一个平台上生成另一个平台上的可执行代码，因为有一些目标平台性能很弱，编译需要花费很长的时间，所以需要在性能较高的平台上通过交叉编译来得到目标程序。<br />在golang和rust中交叉编译都是很容易实现的。</p><h2 id="golang"><a class="markdownIt-Anchor" href="#golang"></a> Golang</h2><p>golang交叉编译一般不需要额外的工具，只需要在golang编译时指定<code>GOOS</code>（操作系统）和<code>GOARCH</code>（CPU架构）即可。<br />可以使用<code>go tool dist list</code>来查看所有支持的目标平台。<br />但是如果代码中使用了cgo，那么通常还需要指定一个<code>CC</code>（一般为gcc）来进行编译。<br />如果目标平台使用glibc库，可以快捷的使用<a class="link"   href="https://github.com/techknowlogick/xgo" >xgo<i class="fas fa-external-link-alt"></i></a>来进行交叉编译。<br />但是有些目标平台是使用的是musl库，或者是使用其他版本的C库，就需要手动安装交叉编译工具链了。</p><p>通过CC指定<code>musl-gcc</code>之后，编译出来的程序就可以在musl库的目标平台下运行了，但是其他版本的C库又不行了，这里要引入一个新的概念，叫做<code>静态编译</code>，即直接将用到的库链接到目标程序中，这样就不在依赖其他的库了。<br />二进制程序依赖的库可以通过<code>ldd file</code>查看。<br />在golang中，在<code>ldflags</code>中加入<code>--extldflags '-static -fpic'</code>参数即可开启静态编译，这时使用musl编译出来的二进制文件就可以在所有的目标平台运行了，无论使用的是什么C库。</p><blockquote><p>为什么不直接使用glibc来进行静态编译呢？<br />直接使用glibc编译出来的二进制文件用ldd查看也是没有依赖的，但是在musl库系统下就是无法运行，我也不知道为什么。</p></blockquote><h2 id="rust"><a class="markdownIt-Anchor" href="#rust"></a> Rust</h2><p>rust有专门用于交叉编译的库：<a class="link"   href="https://github.com/cross-rs/cross" >cross<i class="fas fa-external-link-alt"></i></a>，使用<code>cross build</code>命令直接指定target他就可以工作了。</p><p>如果需要手动交叉编译，在rust中进行交叉编译通常比golang中多一步，需要使用<code>rustup target add</code>来添加目标target，同样的所有目标target都可以通过<code>rustup target list</code>来查看。<br />然后就是和golang一样需要一个gcc，但是有少数时候又不需要，例如在<code>x86_64-unknown-linux-gnu</code>上编译目标平台为<code>x86_64-unknown-linux-musl</code>的<code>hello-world</code>程序就不需要安装额外的<code>musl-gcc</code>，至于为什么这样，我也不知道。<br />另外Rust可能还需要在<code>.cargo/config</code>中添加一个<code>[target.'x86_64-unknown-linux-gnu'.linker = &quot;xxx&quot;]</code>来指定使用的gcc，编译时也需要加入<code>--target host</code>来指定目标平台。</p><blockquote><p>网上很多文章说需要<code>rustup toolchain install</code>，其实是错误的（我认为）</p></blockquote><h2 id="交叉编译工具链下载"><a class="markdownIt-Anchor" href="#交叉编译工具链下载"></a> 交叉编译工具链下载</h2><ul><li>musl: <a class="link"   href="https://musl.cc/" >https://musl.cc/<i class="fas fa-external-link-alt"></i></a></li><li>gnu: <a class="link"   href="https://gnutoolchains.com/download/" >https://gnutoolchains.com/download/<i class="fas fa-external-link-alt"></i></a></li><li>all: <a class="link"   href="https://toolchains.bootlin.com/" >https://toolchains.bootlin.com/<i class="fas fa-external-link-alt"></i></a></li></ul><h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2><ul><li><a class="link"   href="https://github.com/japaric/rust-cross" >https://github.com/japaric/rust-cross<i class="fas fa-external-link-alt"></i></a></li><li><a class="link"   href="https://blog.hcl.moe/archives/2630" >https://blog.hcl.moe/archives/2630<i class="fas fa-external-link-alt"></i></a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;交叉编译&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#交叉编译&quot;&gt;&lt;/a&gt; 交叉编译&lt;/h2&gt;
+&lt;p&gt;交叉编译一般是指在一个平台上生成另一个平台上的可执行代码，因为有一些目标平台性能很弱，编译需要花费很长的时间，所以需要在性能较高的平</summary>
+      
+    
+    
+    
+    <category term="tutorials" scheme="https://nn.ci/categories/tutorials/"/>
+    
+    <category term="learning" scheme="https://nn.ci/categories/learning/"/>
+    
+    
+    <category term="go" scheme="https://nn.ci/tags/go/"/>
+    
+    <category term="rust" scheme="https://nn.ci/tags/rust/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode 440. 字典序的第K小数字</title>
@@ -193,9 +222,9 @@
     
     <category term="gin" scheme="https://nn.ci/tags/gin/"/>
     
-    <category term="github" scheme="https://nn.ci/tags/github/"/>
-    
     <category term="alist" scheme="https://nn.ci/tags/alist/"/>
+    
+    <category term="github" scheme="https://nn.ci/tags/github/"/>
     
     <category term="react" scheme="https://nn.ci/tags/react/"/>
     
@@ -250,9 +279,9 @@
     
     <category term="gin" scheme="https://nn.ci/tags/gin/"/>
     
-    <category term="github" scheme="https://nn.ci/tags/github/"/>
-    
     <category term="alist" scheme="https://nn.ci/tags/alist/"/>
+    
+    <category term="github" scheme="https://nn.ci/tags/github/"/>
     
   </entry>
   
@@ -525,32 +554,6 @@
     
     
     <category term="hexo" scheme="https://nn.ci/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux安装Java</title>
-    <link href="https://nn.ci/posts/linux-install-java.html"/>
-    <id>https://nn.ci/posts/linux-install-java.html</id>
-    <published>2020-04-19T09:20:18.000Z</published>
-    <updated>2020-04-19T09:20:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="java安装"><a class="markdownIt-Anchor" href="#java安装"></a> Java安装</h3><blockquote><p>每次新（重置）系统需要用到Java的时候，都要去上网搜索安装一番，故记录在此。</p></blockquote><span id="more"></span><h5 id="获取url"><a class="markdownIt-Anchor" href="#获取url"></a> 获取url</h5><p>打开(<a class="link"   href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html" >https://www.oracle.com/java/technologies/javase-jdk8-downloads.html<i class="fas fa-external-link-alt"></i></a>)选择Linux x64 Compressed Archive复制下载地址。</p><h5 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.tar.gz</span><br></pre></td></tr></table></figure><p>如果此处提示<code>-bash:wget command not found</code></p><p>则输入：<code>yum -y install wget</code>安装一下<code>wget</code></p><p>国外建议直接使用此链接<code>https://data.lvss.tk/applications/jdk-8u251-linux-x64.tar.gz</code></p><blockquote><p>现在Oracle必须要登录才可以下载了。所以自寻下载链接。我这里选择先登录下载到本地在上传至Google drive下载。(阿里云5M小水管下到死,还是选择了直接ssh)</p></blockquote><h5 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建安装目录</span></span><br><span class="line"><span class="built_in">mkdir</span> /usr/local/java/</span><br><span class="line"><span class="comment">#解压至安装目录</span></span><br><span class="line">tar -zxvf jdk-8u251-linux-x64.tar.gz -C /usr/local/java/</span><br></pre></td></tr></table></figure><h5 id="设置环境变量"><a class="markdownIt-Anchor" href="#设置环境变量"></a> 设置环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#添加</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/java/jdk1.8.0_251</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="comment">#添加软连接（可选）</span></span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/java/jdk1.8.0_251/bin/java /usr/bin/java</span><br></pre></td></tr></table></figure><h5 id="验证是否成功"><a class="markdownIt-Anchor" href="#验证是否成功"></a> 验证是否成功</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">java version <span class="string">&quot;1.8.0_251&quot;</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_251-b08)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)</span><br></pre></td></tr></table></figure><h4 id="maven安装"><a class="markdownIt-Anchor" href="#maven安装"></a> Maven安装</h4><h5 id="下载maven"><a class="markdownIt-Anchor" href="#下载maven"></a> 下载Maven</h5><p>在<a class="link"   href="https://maven.apache.org/download.cgi" >下载页面<i class="fas fa-external-link-alt"></i></a>选择需要的版本进行下载，这里我选择<a class="link"   href="http://apache.communilink.net/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz" > apache-maven-3.6.3-bin.tar.gz<i class="fas fa-external-link-alt"></i></a>，右键复制链接地址，然后：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://apache.communilink.net/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz</span><br></pre></td></tr></table></figure><h5 id="安装-2"><a class="markdownIt-Anchor" href="#安装-2"></a> 安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local/java/</span><br></pre></td></tr></table></figure><h5 id="设置环境变量-2"><a class="markdownIt-Anchor" href="#设置环境变量-2"></a> 设置环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#添加</span></span><br><span class="line"><span class="built_in">export</span> M2_HOME=/usr/local/java/apache-maven-3.6.3</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;M2_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure><h5 id="验证是否成功-2"><a class="markdownIt-Anchor" href="#验证是否成功-2"></a> 验证是否成功</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br><span class="line">Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)</span><br><span class="line">Maven home: /usr/local/java/apache-maven-3.6.3</span><br><span class="line">Java version: 1.8.0_251, vendor: Oracle Corporation, runtime: /usr/local/java/jdk1.8.0_251/jre</span><br><span class="line">Default locale: zh_CN, platform encoding: UTF-8</span><br><span class="line">OS name: <span class="string">&quot;linux&quot;</span>, version: <span class="string">&quot;3.10.0-1127.8.2.el7.x86_64&quot;</span>, <span class="built_in">arch</span>: <span class="string">&quot;amd64&quot;</span>, family: <span class="string">&quot;unix&quot;</span></span><br></pre></td></tr></table></figure><h5 id="更改默认的仓库位置与maven阿里云镜像"><a class="markdownIt-Anchor" href="#更改默认的仓库位置与maven阿里云镜像"></a> 更改默认的仓库位置与maven阿里云镜像：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建仓库文件夹</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/maven/repository</span><br><span class="line"><span class="comment"># 备份默认的配置文件</span></span><br><span class="line"><span class="built_in">cd</span> /mnt/maven/apache-maven-3.6.3/conf</span><br><span class="line"><span class="built_in">cp</span> settings.xml settings-backup.xml</span><br><span class="line">vim settings.xml</span><br><span class="line"><span class="comment"># 在settings标签中添加</span></span><br><span class="line">&lt;localRepository&gt;/mnt/maven/repository&lt;/localRepository&gt;</span><br><span class="line"><span class="comment"># 添加mirrors子节点</span></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">  &lt;<span class="built_in">id</span>&gt;aliyunmaven&lt;/id&gt;</span><br><span class="line">  &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;name&gt;阿里云公共仓库&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;java安装&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#java安装&quot;&gt;&lt;/a&gt; Java安装&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;每次新（重置）系统需要用到Java的时候，都要去上网搜索安装一番，故记录在此。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="tools" scheme="https://nn.ci/categories/tools/"/>
-    
-    
-    <category term="java" scheme="https://nn.ci/tags/java/"/>
-    
-    <category term="linux" scheme="https://nn.ci/tags/linux/"/>
     
   </entry>
   
