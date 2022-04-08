@@ -36,11 +36,11 @@ https://nn.ci/tags/leetcode/
 https://nn.ci/tags/go/
 https://nn.ci/tags/vue/
 https://nn.ci/tags/gin/
-https://nn.ci/tags/alist/
 https://nn.ci/tags/github/
+https://nn.ci/tags/alist/
 https://nn.ci/tags/react/
-https://nn.ci/tags/bt/
 https://nn.ci/tags/cloudflare/
+https://nn.ci/tags/bt/
 https://nn.ci/tags/commands/
 https://nn.ci/tags/scripts/
 https://nn.ci/tags/sort/
@@ -54,8 +54,8 @@ https://nn.ci/tags/jmeter/
 https://nn.ci/tags/tcp/
 https://nn.ci/tags/linux/
 https://nn.ci/tags/rust/
-https://nn.ci/tags/mac/
 https://nn.ci/tags/dp/
+https://nn.ci/tags/mac/
 https://nn.ci/tags/vim/
 https://nn.ci/categories/algorithm/
 https://nn.ci/categories/tutorials/
