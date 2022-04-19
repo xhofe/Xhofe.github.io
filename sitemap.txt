@@ -1,6 +1,6 @@
+https://nn.ci/about/index.html
 https://nn.ci/categories/index.html
 https://nn.ci/links/index.html
-https://nn.ci/about/index.html
 https://nn.ci/tags/index.html
 https://nn.ci/404/index.html
 https://nn.ci/posts/go-rust-cross-compile.html
