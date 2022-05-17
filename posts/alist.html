@@ -536,6 +536,10 @@ v2.0.0-beta5</li>
                 serverURL: 'https://waline.nn.ci',
                 dark: 'body.dark-mode',
                 uploadImage: false,
+                requiredMeta: ['nick', 'mail'],
+                locale: {
+                  placeholder: "请填写正确的邮箱，方便再得到回复时收到邮件通知",
+                }
               });
               function getAuthor(language) {
                     switch (language) {

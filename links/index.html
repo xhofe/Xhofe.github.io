@@ -659,6 +659,25 @@
                 </a>
             </li>
         
+            <li class="friends-link-item">
+                <a target="_blank" rel="noopener" href="https://agarthasf.github.io/">
+                    <div class="content">
+                        <div class="avatar radius">
+                            
+                                <img class="radius"
+                                     src="https://s2.loli.net/2022/05/10/FonNBeJDX8vzOSK.jpg"
+                                     onerror="this.style.display='none'"
+                                >
+                            
+                        </div>
+                        <div class="info">
+                            <div class="name ellipsis">AgarthaSF’s Blog</div>
+                            <div class="description ellipsis">Recording Tech &amp; Life</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        
     </ul>
     <div class="clear"></div>
 </div>
@@ -697,6 +716,10 @@
                 serverURL: 'https://waline.nn.ci',
                 dark: 'body.dark-mode',
                 uploadImage: false,
+                requiredMeta: ['nick', 'mail'],
+                locale: {
+                  placeholder: "请填写正确的邮箱，方便再得到回复时收到邮件通知",
+                }
               });
               function getAuthor(language) {
                     switch (language) {

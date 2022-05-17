@@ -1,8 +1,8 @@
+https://nn.ci/links/index.html
+https://nn.ci/tags/index.html
+https://nn.ci/tweets/index.html
 https://nn.ci/about/index.html
 https://nn.ci/categories/index.html
-https://nn.ci/tags/index.html
-https://nn.ci/links/index.html
-https://nn.ci/tweets/index.html
 https://nn.ci/404/index.html
 https://nn.ci/posts/go-rust-cross-compile.html
 https://nn.ci/posts/leetcode-440.html
