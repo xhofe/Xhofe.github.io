@@ -424,14 +424,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/rust/</loc>
+    <loc>https://nn.ci/tags/CI-CD/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/CI-CD/</loc>
+    <loc>https://nn.ci/tags/rust/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -480,14 +480,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/dp/</loc>
+    <loc>https://nn.ci/tags/mac/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/tags/mac/</loc>
+    <loc>https://nn.ci/tags/dp/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -531,14 +531,14 @@
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/learning/</loc>
+    <loc>https://nn.ci/categories/tools/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nn.ci/categories/tools/</loc>
+    <loc>https://nn.ci/categories/learning/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
